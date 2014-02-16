@@ -20,18 +20,19 @@ repositories {
 
 dependencies {
     compile ( 
-    	['com.google.guava:guava:r05'],
-    	['joda-time:joda-time:2.3']
+        ['com.google.guava:guava:r05'],
+        ['joda-time:joda-time:2.3']
 	)
     testCompile ( 
-    	['junit:junit:4.+']
+        ['junit:junit:4.+']
     )
     providedCompile (
-    	['javax:javaee-api:6.0'],
-    	['org.jboss.resteasy:resteasy-jaxrs:2.3.7.Final'],
-    	['org.hibernate:hibernate-validator:4.3.1.Final'],
-    	['org.hibernate:hibernate-entitymanager:4.2.7.SP1'],
-    	['org.hibernate:hibernate-validator:4.3.1.Final']
+        ['javax:javaee-api:6.0'],
+        ['org.jboss.resteasy:resteasy-jaxrs:2.3.7.Final'],
+        ['org.hibernate:hibernate-validator:4.3.1.Final'],
+        ['org.hibernate:hibernate-entitymanager:4.2.7.SP1'],
+        ['org.hibernate:hibernate-validator:4.3.1.Final'],
+        fileTree(dir:'./lib', includes:['*.jar'])
 	)
 }
 
@@ -48,12 +49,10 @@ uploadArchives {
 }
 
 
-/* eclipse設定 */
 eclipse {
     wtp {
         facet {
-            facet name: 'java', version: '1.6'
-            /* 動的Webモジュール*/
+            facet name: 'java', version: '1.7'
             facet name: 'jst.web', version: '3.0'
         }
     }
