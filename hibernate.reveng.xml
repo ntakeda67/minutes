@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-schema="MINUTES" match-name=".*"></table-filter>
+	<table-filter match-schema="APEX_040000" match-name=".*"
+		exclude="true">
+	</table-filter>
+	<table-filter match-schema="CTXSYS" match-name=".*"
+		exclude="true">
+	</table-filter>
+	<table-filter match-schema="FLOWS_FILES" match-name=".*"
+		exclude="true">
+	</table-filter>
+	<table-filter match-schema="HR" match-name=".*" exclude="true"></table-filter>
+	<table-filter match-schema="MDSYS" match-name=".*" exclude="true"></table-filter>
+	<table-filter match-schema="OUTLN" match-name=".*" exclude="true"></table-filter>
+	<table-filter match-schema="SYS" match-name=".*" exclude="true"></table-filter>
+	<table-filter match-schema="SYSTEM" match-name=".*"
+		exclude="true">
+	</table-filter>
+	<table-filter match-schema="XDB" match-name=".*" exclude="true"></table-filter>
+	<table schema="MINUTES" name="MEMBER_TYPE">
+		<column name="RID"></column>
+		<column name="TYPE"></column>
+		<column name="NAME"></column>
+		<column name="AVAILABLE"></column>
+		<column name="CREATE_DATE"></column>
+		<column name="CREATE_USER"></column>
+		<column name="UPDATE_DATE"></column>
+		<column name="UPDATE_USER"></column>
+		<column name="COMMENTS"></column>
+	</table>
+	<table schema="MINUTES" name="MEETING_FORM">
+		<column name="RID"></column>
+		<column name="MEETING_RID"></column>
+		<column name="MEETING_TYPE_RID"></column>
+		<column name="AVAILABLE"></column>
+		<column name="CREATE_DATE"></column>
+		<column name="CREATE_USER"></column>
+		<column name="UPDATE_DATE"></column>
+		<column name="UPDATE_USER"></column>
+		<column name="COMMENTS"></column>
+	</table>
+	<table schema="MINUTES" name="MEETING_TYPE">
+		<column name="RID"></column>
+		<column name="TYPE"></column>
+		<column name="NAME"></column>
+		<column name="AVAILABLE"></column>
+		<column name="CREATE_DATE"></column>
+		<column name="CREATE_USER"></column>
+		<column name="UPDATE_DATE"></column>
+		<column name="UPDATE_USER"></column>
+		<column name="COMMENTS"></column>
+	</table>
+	<table schema="MINUTES" name="MEETING">
+		<column name="RID"></column>
+		<column name="PURPOSE"></column>
+		<column name="PERIOD"></column>
+		<column name="START_DATE"></column>
+		<column name="END_DATE"></column>
+		<column name="PLACE"></column>
+		<column name="TOPIC"></column>
+		<column name="GOAL"></column>
+		<column name="PREPARATION"></column>
+		<column name="REGISTER_DATE"></column>
+		<column name="MODIFY_DATE"></column>
+		<column name="CANCEL_DATE"></column>
+		<column name="AVAILABLE"></column>
+		<column name="CREATE_DATE"></column>
+		<column name="CREATE_USER"></column>
+		<column name="UPDATE_DATE"></column>
+		<column name="UPDATE_USER"></column>
+		<column name="COMMENTS"></column>
+	</table>
+	<table schema="MINUTES" name="MEETING_MEMBER">
+		<column name="RID"></column>
+		<column name="MEETING_RID"></column>
+		<column name="MEMBER_RID"></column>
+		<column name="MEMBER_TYPE_RID"></column>
+		<column name="AVAILABLE"></column>
+		<column name="CREATE_DATE"></column>
+		<column name="CREATE_USER"></column>
+		<column name="UPDATE_DATE"></column>
+		<column name="UPDATE_USER"></column>
+		<column name="COMMENTS"></column>
+	</table>
+	<table schema="MINUTES" name="MINUTES">
+		<column name="RID"></column>
+		<column name="MEETING_RID"></column>
+		<column name="PURPOSE"></column>
+		<column name="START_DATE"></column>
+		<column name="END_DATE"></column>
+		<column name="PLACE"></column>
+		<column name="DECISION"></column>
+		<column name="TODO"></column>
+		<column name="NEXT_START_DATE"></column>
+		<column name="NEXT_PLACE"></column>
+		<column name="REGISTER_DATE"></column>
+		<column name="MODIFY_DATE"></column>
+		<column name="AVAILABLE"></column>
+		<column name="CREATE_DATE"></column>
+		<column name="CREATE_USER"></column>
+		<column name="UPDATE_DATE"></column>
+		<column name="UPDATE_USER"></column>
+		<column name="COMMENTS"></column>
+	</table>
+	<table schema="MINUTES" name="MEETING_GROUP_MEMBER">
+		<column name="RID"></column>
+		<column name="MEETING_GROUP_RID"></column>
+		<column name="MEMBER_RID"></column>
+		<column name="AVAILABLE"></column>
+		<column name="CREATE_DATE"></column>
+		<column name="CREATE_USER"></column>
+		<column name="UPDATE_DATE"></column>
+		<column name="UPDATE_USER"></column>
+		<column name="COMMENTS"></column>
+	</table>
+	<table schema="MINUTES" name="MEETING_GROUP">
+		<column name="RID"></column>
+		<column name="CODE"></column>
+		<column name="NAME"></column>
+		<column name="AVAILABLE"></column>
+		<column name="CREATE_DATE"></column>
+		<column name="CREATE_USER"></column>
+		<column name="UPDATE_DATE"></column>
+		<column name="UPDATE_USER"></column>
+		<column name="COMMENTS"></column>
+	</table>
+	<table schema="MINUTES" name="MEMBER">
+		<column name="RID"></column>
+		<column name="SUR_NAME"></column>
+		<column name="FIRST_NAME"></column>
+		<column name="MAIL_ADDRESS"></column>
+		<column name="LOGIN_ID"></column>
+		<column name="PASSWORD"></column>
+		<column name="REGISTER_DATE"></column>
+		<column name="MODIFY_DATE"></column>
+		<column name="AVAILABLE"></column>
+		<column name="CREATE_DATE"></column>
+		<column name="CREATE_USER"></column>
+		<column name="UPDATE_DATE"></column>
+		<column name="UPDATE_USER"></column>
+		<column name="COMMENTS"></column>
+	</table>
+</hibernate-reverse-engineering>
