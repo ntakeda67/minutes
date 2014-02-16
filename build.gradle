@@ -1,0 +1,72 @@
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+version = '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'minutes', 'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile ( 
+    	['com.google.guava:guava:r05'],
+    	['joda-time:joda-time:2.3']
+	)
+    testCompile ( 
+    	['junit:junit:4.+']
+    )
+    providedCompile (
+    	['javax:javaee-api:6.0'],
+    	['org.jboss.resteasy:resteasy-jaxrs:2.3.7.Final'],
+    	['org.hibernate:hibernate-validator:4.3.1.Final'],
+    	['org.hibernate:hibernate-entitymanager:4.2.7.SP1'],
+    	['org.hibernate:hibernate-validator:4.3.1.Final']
+	)
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
+
+
+/* eclipse設定 */
+eclipse {
+    wtp {
+        facet {
+            facet name: 'java', version: '1.6'
+            /* 動的Webモジュール*/
+            facet name: 'jst.web', version: '3.0'
+        }
+    }
+}
+
+task initProject(dependsOn: "eclipse") {
+ new File('src/main/java/').mkdirs()
+ new File('src/test/java/').mkdirs()
+ new File('src/main/resources/').mkdirs()
+ new File('src/test/resources/').mkdirs()
+ new File('src/main/webapp/').mkdirs()
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.9'
+}
