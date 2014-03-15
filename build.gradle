@@ -16,23 +16,34 @@ jar {
 
 repositories {
     mavenCentral()
+    maven { url "http://repository.jboss.org/nexus/content/groups/public" }
 }
 
 dependencies {
     compile ( 
         ['com.google.guava:guava:r05'],
         ['joda-time:joda-time:2.3']
-	)
+    )
     testCompile ( 
+        //['org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final'],
+        //['org.hibernate:hibernate-core:4.2.7.SP1'],
+        //['org.hibernate:hibernate-entitymanager:4.2.7.SP1'],
+        //['org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.1.Final'],
+        //['org.jboss.spec:jboss-javaee-6.0:3.0.2.Final'],
+        //['javax:javaee-web-api:6.0'],
         ['junit:junit:4.+']
     )
+    // 作成されるwarに追加されないことを除いて compile と同じ
+    // JBossが moduleとして持っているものはここに入れる
     providedCompile (
-        ['javax:javaee-api:6.0'],
-        ['org.jboss.resteasy:resteasy-jaxrs:2.3.7.Final'],
-        ['org.hibernate:hibernate-validator:4.3.1.Final'],
+        fileTree(dir:'./lib', includes:['*.jar']),
+        //['org.jboss.spec:jboss-javaee-6.0:3.0.2.Final'],
+        //['org.jboss.resteasy:resteasy-jaxrs:2.3.7.Final'],
+        //['org.hibernate:hibernate-validator:4.3.1.Final'],
         ['org.hibernate:hibernate-entitymanager:4.2.7.SP1'],
-        ['org.hibernate:hibernate-validator:4.3.1.Final'],
-        fileTree(dir:'./lib', includes:['*.jar'])
+        ['org.hibernate:hibernate-core:4.2.7.SP1'],
+        //['org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'],
+        //['javax:javaee-web-api:6.0']
 	)
 }
 

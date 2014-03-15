@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        
+        <!-- JDBCのメタデータから児童洗濯されるので通常は不要 -->
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="connection.url">jdbc:oracle:thin:@192.168.211.176:1521:xe</property>
+        <property name="connection.username">minutes</property>
+        <property name="connection.password">minutes</property>
+
+<!-- 
+        <property name="hibernate.hbm2ddl.auto">create</property>
+ -->
+        <property name="hibernate.show_sql">true</property>
+
+        <mapping package="org.nt67.minutes.entity"/>
+        <mapping resource="entity/Member.hbm.xml"/>
+        <mapping resource="entity/MemberType.hbm.xml"/>
+        <mapping resource="entity/MeetingGroupMember.hbm.xml"/>
+        <mapping resource="entity/Meeting.hbm.xml"/>
+        <mapping resource="entity/MeetingForm.hbm.xml"/>
+        <mapping resource="entity/MeetingGroup.hbm.xml"/>
+        <mapping resource="entity/MeetingMember.hbm.xml"/>
+        <mapping resource="entity/MeetingType.hbm.xml"/>
+        <mapping resource="entity/Minutes.hbm.xml"/>
+    </session-factory>
+
+</hibernate-configuration>

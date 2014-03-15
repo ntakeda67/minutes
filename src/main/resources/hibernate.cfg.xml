@@ -5,22 +5,14 @@
 
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-        <property name="connection.url">jdbc:oracle:thin@192.168.211.176:1521:xe</property>
-        <property name="connection.username">minutes</property>
-        <property name="connection.password">minutes</property>
-        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
-
 <!-- 
         <property name="hibernate.hbm2ddl.auto">create</property>
  -->
         <property name="hibernate.show_sql">true</property>
 
-<!-- 
-        <mapping package="org.nt67.h2dbtest"/>
-        <mapping class="org.nt67.h2dbtest.entity.Item"/>
-        <mapping class="org.nt67.h2dbtest.entity.Book"/>
- -->
-    </session-factory>
+        <mapping package="org.nt67.minutes.entity"/>
+        <mapping resource="entity/Member.hbm.xml"/>
+        <mapping resource="entity/MemberType.hbm.xml"/>
 
+    </session-factory>
 </hibernate-configuration>
