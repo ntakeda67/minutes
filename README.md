@@ -15,16 +15,21 @@
 # Setting Jboss EAP 6.1
 ## configure jdbc driver as custom module.
 on cli.
-1. ```module add --name=com.oracle --resources=e:\usr\temp\com\oracle\ojdbc6.jar --dependencies=javax.api,javax.transaction.api```
-   created directory "${JBOSS_HOME}/modules/com/oracle/main" and some module setting files.
-1. cd /subsystem=datasources
-1. ./jdbc-driver=oracle-driver:add(driver-name=oracle-driver,driver-module-name=com.oracle)
-1. jdbc-driver-info
-   for confirmation jdbc-driver registered.
+1. created directory "${JBOSS_HOME}/modules/com/oracle/main" and some module setting files.
+   ```module add --name=com.oracle --resources=e:\usr\temp\com\oracle\ojdbc6.jar --dependencies=javax.api,javax.transaction.api```
+1. set datasource configure mode.
+   ```cd /subsystem=datasources```
+1. add jdbc driver module.
+   ```./jdbc-driver=oracle-driver:add(driver-name=oracle-driver,driver-module-name=com.oracle)```
+1. confirm registered jdbc-driver.
+   ```jdbc-driver-info```
 ## configure datasource.
-1. data-source add --name=MinutesDS --connection-url="jdbc:oracle:thin@192.168.211.176:1521:xe" --driver-name=oracle-driver --jndi-name=java:jboss/resources/jdbc/MinutesDS
-   configured standalne/configuration/ostandalone.xml
+1. configured standalne/configuration/standalone.xml
+   ```data-source add --name=MinutesDS --connection-url="jdbc:oracle:thin@192.168.211.176:1521:xe" --driver-name=oracle-driver --jndi-name=java:jboss/resources/jdbc/MinutesDS```
    
-1. data-source --name=MinutesDS --user-name=minutes --password=minutes --jta=true
-1. data-source read-resource --name=MintuesDS --recursive=true
-1. data-source enable --name=MinutesDS
+1. configured other setttings.
+   ```data-source --name=MinutesDS --user-name=minutes --password=minutes --jta=true```
+1. confirm data source information.
+   ```data-source read-resource --name=MintuesDS --recursive=true```
+1. enabled data source
+   ```data-source enable --name=MinutesDS```
